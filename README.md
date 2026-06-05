@@ -11,7 +11,7 @@ The pretrained weights and test dataset are not included in this repository due 
 ```text
 .
 ├── __pycache__/
-├── model_data/          # Model-related files, such as class names and anchors
+├── model_data/          # Model-related files, such as class names
 ├── nets/                # YOLO network architecture
 ├── utils/               # Utility functions for training, data loading, and evaluation
 ├── utils_coco/          # COCO-related utility functions
@@ -20,7 +20,7 @@ The pretrained weights and test dataset are not included in this repository due 
 ├── train.py             # Local training script
 ├── yolo.py              # YOLO inference configuration file
 ├── get_map.py           # mAP evaluation script
-├── predict.py           # Single-image prediction script
+├── predict.py           # prediction script
 ├── voc_annotation.py    # VOC annotation list generation script
 ├── summary.py           # Model structure summary script
 ├── requirements.txt     # Python dependencies
@@ -57,8 +57,8 @@ After downloading, place the test dataset and weight files in the project direct
 │           └── Main/
 │               └── test.txt
 ├── model_data/
-│   ├── voc_classes.txt
-│   └── your_weight.pth
+│   ├── gpr_classes.txt
+│   └── weight.pth
 ├── yolo.py
 ├── get_map.py
 └── ...
@@ -101,15 +101,15 @@ Open `yolo.py` and find the model configuration section. It is usually similar t
 
 ```python
 _defaults = {
-    "model_path": "model_data/your_weight.pth",
-    "classes_path": "model_data/voc_classes.txt",
+    "model_path": "model_data/weight.pth",
+    "classes_path": "model_data/gpr_classes.txt",
 }
 ```
 
 Modify `model_path` to the path of the downloaded weight file. For example:
 
 ```python
-"model_path": "model_data/best_epoch_weights.pth"
+"model_path": "model_data/best_weights.pth"
 ```
 
 If the weight file is stored in another folder, modify the path accordingly:
@@ -121,7 +121,7 @@ If the weight file is stored in another folder, modify the path accordingly:
 Please also make sure that the class file path is correct:
 
 ```python
-"classes_path": "model_data/voc_classes.txt"
+"classes_path": "model_data/gpr_classes.txt"
 ```
 
 The class names in `voc_classes.txt` must be consistent with the training setting. For example:
