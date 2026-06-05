@@ -1,4 +1,4 @@
-# YOLO-based GPR Defect Detection
+# FedCA: Federated Conditional Adversarial Domain Generalization for Airport Runway Subsurface Defect Detection
 
 This repository provides a YOLO-based object detection framework for Ground Penetrating Radar (GPR) defect detection. The project includes model definition, training scripts, inference scripts, mAP evaluation scripts, and federated learning client/server code.
 
