@@ -305,6 +305,18 @@ map_out/results/results.txt
 
 ---
 
+## Label Mapping
+
+In the experiments, the original dataset labels are mapped to the class names used in the paper as follows:
+
+| Original Label  | Class Name in Paper |
+| --------------- | ------------------- |
+| `DT_GAP`        | `VOID`              |
+| `DT_LACUNAS`    | `LOOSENESS`         |
+| `DT_SUBSIDENCE` | `SUBSIDENCE`        |
+| `DT_CRACK`      | `CRACK`             |
+
+
 ## Notes
 
 1. The pretrained weights and test dataset must be downloaded before running evaluation.
